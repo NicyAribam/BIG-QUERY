@@ -1,0 +1,70 @@
+SELECT * FROM `bigquery-public-data.census_bureau_international.mortality_life_expectancy`
+Query 1.
+SELECT count(distinct(country_name)) 
+FROM `bigquery-public-data.census_bureau_international.mortality_life_expectancy`
+#Result – 228
+
+Query 2.
+SELECT country_code, infant_mortality_female
+FROM `bigquery-public-data.census_bureau_international.mortality_life_expectancy`
+WHERE country_code="VE" limit 3
+#OUTPUT:6.87 ,10.27 , 9.97
+
+
+Query 3.
+SELECT distinct(year), infant_mortality_female
+FROM `bigquery-public-data.census_bureau_international.mortality_life_expectancy`
+WHERE country_code= "VE"
+limit 3
+#OUTPUT:8.19, 21.56, 15.64
+
+
+QUERY4.
+SELECT distinct(year), infant_mortality_female
+FROM `bigquery-public-data.census_bureau_international.mortality_life_expectancy`
+WHERE country_code= "VE"
+ORDER BY year asc 
+limit 3
+#Output: 29.63, 28.32, 27.06
+
+Query 5.
+SELECT distinct(country_code),infant_mortality_female 
+FROM `bigquery-public-data.census_bureau_international.mortality_life_expectancy`
+WHERE country_code= "VE"
+LIMIT 3
+#Output: 8.42, 22.56, 6.41
+
+SELECT * FROM `bigquery-public-data.census_bureau_international.birth_death_growth_rates`
+Query 6.
+SELECT count(distinct(country_name)) 
+FROM `bigquery-public-data.census_bureau_international.birth_death_growth_rates`
+Result – 100
+
+Query 7.
+SELECT country_code,crude_death_rate
+FROM `bigquery-public-data.census_bureau_international.birth_death_growth_rates`
+WHERE country_code= "BU"
+Limit 2
+#Output: 16.03, 14.73,
+
+Query 8.
+SELECT distinct(year),crude_death_rate
+FROM `bigquery-public-data.census_bureau_international.birth_death_growth_rates`
+WHERE country_code= "BU"
+Limit 2
+#Output:14.36, 14.91
+
+Query 9.
+SELECT distinct(year),crude_death_rate
+FROM `bigquery-public-data.census_bureau_international.birth_death_growth_rates`
+WHERE country_code= "BU"
+ORDER BY year desc
+limit 3
+#Output:16.63, 16.57, 16.52
+
+Query 10.
+SELECT distinct(country_code),crude_death_rate
+FROM `bigquery-public-data.census_bureau_international.birth_death_growth_rates`
+WHERE country_code= "BU"
+limit 3
+#Output: 15.02, 13.61, 15.56
